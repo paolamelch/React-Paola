@@ -5,10 +5,13 @@ import { Welcome } from "./Welcome";
 export class App extends React.Component{
     render(){
         return(
-            <div>
+            <>
                 <Hello />
-                <Welcome />
-            </div>
+                <Welcome 
+                name = "Paola"
+                age = {26}
+                />
+            </>
         )
     }
 }
