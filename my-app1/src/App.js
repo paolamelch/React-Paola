@@ -4,11 +4,12 @@ import { Welcome } from "./Welcome";
 
 export class App extends React.Component{
     render(){
+        const name = "Paola";
         return(
             <>
                 <Hello />
                 <Welcome 
-                name = "Paola"
+                name = {name}
                 age = {26}
                 />
             </>
