@@ -14,7 +14,7 @@ export class App extends React.Component{
                 name = {name}
                 age ={15}
                 />
-                <Counter />
+                <Counter initialValue ={0} incrementBy={1} interval={1000}/>
             </>
         )
     }
