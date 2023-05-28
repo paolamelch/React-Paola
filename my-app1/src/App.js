@@ -12,7 +12,7 @@ export class App extends React.Component{
                 <Hello />
                 <Welcome 
                 name = {name}
-                age ={15}
+                age ={25}
                 />
                 <Counter initialValue ={0} incrementBy={1} interval={1000}/>
             </>
