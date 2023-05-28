@@ -2,6 +2,10 @@ import React from "react";
 
 export class Age extends React.Component{
     render(){
-        return <p>Your age is {this.props.age}</p>
+        if(this.props.age > 18){
+            return <p>Your age is {this.props.age}</p>
+        }else{
+            return <p>You are very young!</p>
+        }
     }
 }
