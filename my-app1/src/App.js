@@ -1,6 +1,7 @@
 import React from "react";
 import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
+import { Age } from "./Age";
 
 export class App extends React.Component{
     render(){
@@ -10,7 +11,7 @@ export class App extends React.Component{
                 <Hello />
                 <Welcome 
                 name = {name}
-                age = {26}
+                age ={26}
                 />
             </>
         )
