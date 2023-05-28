@@ -5,7 +5,7 @@ import { Age } from "./Age";
 
 export class App extends React.Component{
     render(){
-        const name = "Paola";
+        const name = "John";
         return(
             <>
                 <Hello />
