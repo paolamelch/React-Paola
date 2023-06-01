@@ -4,30 +4,38 @@ export class Login extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            username : "",
-            password : "",
+            username : '',
+            password : '',
         }
     }
 
-    handleUsernameChange = (event) => {
-        this.setState({username : event.target.value})
+    handleInputChange = (event) => {
+        const value = event.target.value
+        const name = event.target.name
+        this.setState({[name] : value})
     }
 
-    handlePasswordChange = (event) => {
-        this.setState({password : event.target.value})
+    handleResetButton = () => {
+        this.setState({
+            username : '',
+            password:'',
+        })
     }
-
-    //non sono riuscita a capire cosa fare nella seconda parte della consegna dell'esercizio...
-
+    //non sono riuscita a capire cosa fare nella seconda parte della consegna dell'esercizio 19...
 
     render(){
         const isDisabled = !this.state.username || !this.state.password;
         return(
-        <>
-        <input type="text" name="username" onChange={this.handleUsernameChange}/>
-        <input type="password" name="password" onChange={this.handlePasswordChange}/>
-        <input type="button" name="login" value="login" disabled={isDisabled}/>
-        </>
+            <div>
+                <div>
+                    <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange}/>
+                    <input type="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
+                    <input type="button" name="login" value="login" disabled={isDisabled}/>
+                </div>
+                <div>
+                    <button onClick={this.handleResetButton}>Reset</button>
+                </div>
+            </div>
         )
     }
 }
