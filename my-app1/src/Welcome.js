@@ -1,7 +1,11 @@
 import React from "react";
 
 export class Welcome extends React.Component{
-    render(name){
-        return <p>Welcome,{name = "Giovanni"}!</p>
+    render(){
+        return <p>Welcome,{this.props.name ?? this.defaultProps}!</p>
     }
+}
+
+Welcome.defaultProps = {
+    name : "Giovanni",
 }
