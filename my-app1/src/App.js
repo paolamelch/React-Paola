@@ -1,8 +1,7 @@
 import React from "react";
 import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
-
+import { CounterDisplay } from "./CounterDisplay"
 
 export class App extends React.Component{
     render(){
@@ -14,7 +13,7 @@ export class App extends React.Component{
                 name = {name}
                 age ={25}
                 />
-                <Counter initialValue ={0} incrementBy={1} interval={1000}/>
+                <CounterDisplay initialValue ={0} incrementBy={1} interval={1000}/>
             </>
         )
     }
