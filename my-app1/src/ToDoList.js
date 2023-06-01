@@ -1,7 +1,5 @@
 import React from "react";
 
-const items = ["Ciao", "sono","Paola"]
-
 export class ToDoList extends React.Component{
 
     constructor(props){
@@ -19,11 +17,12 @@ export class ToDoList extends React.Component{
     
     handleAddingInput = () =>{
         this.setState({
-            item: items.push(this.state.item.props.children)
+            item: this.props.names.push(this.state.item.props.children)
         })
     }
 
     render(){
+        const items = [...this.props.names]
         const listItems = items.map((item) =><li>{item}</li>)
         return(
             <div>
