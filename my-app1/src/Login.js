@@ -17,7 +17,9 @@ export class Login extends React.Component{
         this.setState({password : event.target.value})
     }
 
-    //non sono riuscita a capire cosa fare nella seconda parte della consegna dell'esercizio...
+    handleLogin = () => {
+        this.props.onClick(this.state)
+    }
 
 
     render(){
@@ -26,7 +28,7 @@ export class Login extends React.Component{
         <>
         <input type="text" name="username" onChange={this.handleUsernameChange}/>
         <input type="password" name="password" onChange={this.handlePasswordChange}/>
-        <input type="button" name="login" value="login" disabled={isDisabled}/>
+        <input type="button" name="login" value="login" disabled={isDisabled} onClick={this.handleLogin}/>
         </>
         )
     }
