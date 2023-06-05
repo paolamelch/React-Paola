@@ -17,7 +17,7 @@ export class App extends React.Component{
         return(
             <>
                 <Hello />
-                <ToDoList names ={["Ciao","sono","Paola"]}/>
+                <ToDoList />
                 <ClickTracker/>
             </>
         )

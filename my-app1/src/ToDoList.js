@@ -6,28 +6,32 @@ export class ToDoList extends React.Component{
         super(props)
 
         this.state ={
-            item :""
+            items : [],
+            string: "", 
         }
 
     }
 
     handleItemChange = (event) =>{
-        this.setState({item :<li>{event.target.value}</li>})
-    }
-    
-    handleAddingInput = () =>{
-        this.setState({
-            item: this.props.names.push(this.state.item.props.children)
-        })
+        this.setState({string : event.target.value})
     }
 
+    handleAddingInput = () =>{
+        const input = [this.state.string];
+
+        this.setState({items : this.state.items.concat(input)})
+    }
+
+    componentDidUpdate(){
+        console.log(this.state.items);
+    }
+    
     render(){
-        const items = [...this.props.names]
-        const listItems = items.map((item) =><li>{item}</li>)
         return(
             <div>
-               <ul>{listItems}
-               </ul>
+               <ul>
+                <li>{this.state.items}</li>
+                </ul>
                 <div>
                     <input type="text" name="input" onChange={this.handleItemChange}/>
                     <button onClick={this.handleAddingInput}>ADD</button>
