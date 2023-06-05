@@ -22,6 +22,10 @@ export class ToDoList extends React.Component{
         this.setState({string : ""}) 
     }
 
+    handleResetButton = () =>{
+        this.setState({items : []})
+    }
+
     componentDidUpdate(){
         console.log(this.state.items);
     }
@@ -36,6 +40,7 @@ export class ToDoList extends React.Component{
                 <div>
                     <input type="text" value={this.state.string} name="input" onChange={this.handleItemChange}/>
                     <button onClick={this.handleAddingInput}>ADD</button>
+                    <button onClick={this.handleResetButton}>Reset</button>
                 </div> 
             </div>
             
