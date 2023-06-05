@@ -1,5 +1,4 @@
 import React from "react";
-
 export class ToDoList extends React.Component{
 
     constructor(props){
@@ -36,6 +35,7 @@ export class ToDoList extends React.Component{
                 <div>
                     <input type="text" value={this.state.string} name="input" onChange={this.handleItemChange}/>
                     <button onClick={this.handleAddingInput}>ADD</button>
+                    <button onClick={this.handleClearButton}>Reset</button>
                 </div> 
             </div>
             
