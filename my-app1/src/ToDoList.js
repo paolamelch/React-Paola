@@ -27,10 +27,11 @@ export class ToDoList extends React.Component{
     }
     
     render(){
+        const listItems = this.state.items.map ((item)=> (<li>{item}</li>))
         return(
             <div>
                <ul>
-                <li>{this.state.items}</li>
+                {listItems}
                 </ul>
                 <div>
                     <input type="text" name="input" onChange={this.handleItemChange}/>
