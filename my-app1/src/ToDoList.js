@@ -19,11 +19,17 @@ export class ToDoList extends React.Component{
     handleAddingInput = () =>{
         const input = [this.state.string];
         this.setState({items : this.state.items.concat(input)})
-        this.setState({string : ""}) 
+        this.setState({string : ""})
     }
 
     handleResetButton = () =>{
         this.setState({items : []})
+    }
+
+    handleRemove = (event) =>{
+        const number = event.target.id;
+        let sliced = this.state.items.splice(number,1);
+        this.setState({items : this.state.items})
     }
 
     componentDidUpdate(){
@@ -31,7 +37,8 @@ export class ToDoList extends React.Component{
     }
     
     render(){
-        const listItems = this.state.items.map((item) => (<li>{item}</li>))
+        const listItems = this.state.items.map((item, i) => (
+        <li key={i}>{item}<button id={i} onClick={this.handleRemove}>Remove</button></li>))
         return(
             <div>
                <ul>
