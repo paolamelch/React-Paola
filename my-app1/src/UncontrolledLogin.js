@@ -11,14 +11,33 @@ export class UncontrolledLogin extends React.Component{
         const password = event.target.elements.password.value;
         const remember = event.target.elements.remember.checked;
 
+    }
 
+    handleFireButton = () =>{
+        const username = this._formRef.current[0].value;
+        const password = this._formRef.current[1].value;
+        const btn = this._formRef.current[3];
+        if(username && password){
+            btn.disabled = false;
+        }else{
+            btn.disabled = true;
+        }
+    }
+
+    componentDidMount(){
+        const username = this._formRef.current[0].value;
+        const password = this._formRef.current[1].value;
+        const btn = this._formRef.current[3];
+        if(username === "" && password === ""){
+            btn.disabled = true;
+        }
     }
 
     render(){
         return(
             <div>
-                <form ref={this._formRef} onSubmit={this.handleSubmitForm}>
-                    <input name="username"/>
+                <form ref={this._formRef} onChange={this.handleFireButton} onSubmit={this.handleSubmitForm}>
+                    <input name="username" />
                     <input name="password" type="password"/>
                     <input name="remember" type="checkbox"/>
                     <button type="submit">Login</button>

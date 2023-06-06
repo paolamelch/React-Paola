@@ -21,7 +21,6 @@ export class Login extends React.Component{
             password:'',
         })
     }
-    //non sono riuscita a capire cosa fare nella seconda parte della consegna dell'esercizio 19...
 
     render(){
         const isDisabled = !this.state.username || !this.state.password;
