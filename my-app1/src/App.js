@@ -11,21 +11,17 @@ import { Login } from "./Login";
 
 export class App extends React.Component{
 
-    state = {
-        logged : false,
+    onLogin = (FormData) => {
+        this.setState(FormData)
     }
 
-    onLogin = (FormData) => {
-        this.setState({
-            logged: true,
-        })
-    }
+    
     render(){
         const name = "John";
         return(
             <>
                 <Hello />
-                <Login onClick = {this.onLogin}/>
+                <Login passingData={this.onLogin}/>
                 <ClickTracker/>
             </>
         )

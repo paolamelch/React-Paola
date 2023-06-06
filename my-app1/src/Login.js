@@ -18,7 +18,7 @@ export class Login extends React.Component{
     }
 
     handleLogin = () => {
-        this.props.onClick(this.state)
+        this.props.passingData(this.state)
     }
 
 
