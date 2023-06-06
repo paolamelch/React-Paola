@@ -26,24 +26,26 @@ export class ToDoList extends React.Component{
         this.setState({items : []})
     }
 
+    handleRemove = (event) =>{
+        const number = event.target.id;
+        let sliced = this.state.items.splice(number,1);
+        this.setState({items : this.state.items});
+    }
+
     componentDidUpdate(){
         console.log(this.state.items);
     }
     
     render(){
-        const listItems = this.state.items.map((item) => (<li>{item}</li>))
         return(
             <div>
                <ul>
-                {listItems}
+                {this.props.render(this.state.items,this.handleRemove)}
                 </ul>
-                <div>
-                    <input type="text" value={this.state.string} name="input" onChange={this.handleItemChange}/>
-                    <button onClick={this.handleAddingInput}>ADD</button>
-                    <button onClick={this.handleResetButton}>Reset</button>
-                </div> 
+                  <input type="text" value={this.state.string} name="input" onChange={this.handleItemChange}/>
+                  <button onClick={this.handleAddingInput}>ADD</button>
+                  <button onClick={this.handleResetButton}>Reset</button>
             </div>
-            
         )
     }
 }

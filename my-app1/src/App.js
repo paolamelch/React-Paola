@@ -13,11 +13,18 @@ import { ToDoList } from "./ToDoList";
 
 export class App extends React.Component{
     render(){
-        const name = "John";
         return(
             <>
                 <Hello />
-                <ToDoList />
+                <ToDoList 
+                render ={(items,handleRemove) =>{
+                    return(
+                        <div>
+                            {items.map((item,i) => (<li key={i}>{item}<button id={i} onClick={(event)=> handleRemove(event)}>Remove</button></li>))}
+                        </div>
+                    )
+                }
+                }/>
                 <ClickTracker/>
             </>
         )
