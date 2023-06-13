@@ -30,6 +30,7 @@ export class App extends React.Component{
         return(
             <>
                 <Hello />
+                <Login/>
                 <ClickCounter/>
             </>
         )
