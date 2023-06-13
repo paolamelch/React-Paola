@@ -10,6 +10,7 @@ import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
 import {DisplayContext, LanguageContext} from "./DisplayContext";
 import { CounterDisplay } from "./CounterDisplay";
+import { GetGitHubUser } from "./GetGitHubUser";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     return (<>
         <Hello/>
         <Login/>
-        <Counter/>
+        <GetGitHubUser username="paolamelch"/>
         <ClickCounter onCounterChange={handleCounterChange}/>
     </>)
 }
