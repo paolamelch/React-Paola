@@ -9,6 +9,7 @@ import {Login} from "./Login";
 import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
 import {DisplayContext, LanguageContext} from "./DisplayContext";
+import { CounterDisplay } from "./CounterDisplay";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     return (<>
         <Hello/>
         <Login/>
+        <Counter/>
         <ClickCounter onCounterChange={handleCounterChange}/>
     </>)
 }
