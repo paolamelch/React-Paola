@@ -1,28 +1,23 @@
 import React from "react";
 import {Hello} from "./Hello";
-import {Welcome} from "./Welcome";
-import {Counter} from "./Counter";
-import {ClickCounter} from "./ClickCounter";
-import {ClickTracker} from "./ClickTracker";
-import {InteractiveWelcome} from "./InteractiveWelcome";
 import {Login} from "./Login";
 import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
-import {DisplayContext, LanguageContext} from "./DisplayContext";
 import { CounterDisplay } from "./CounterDisplay";
-import { GetGitHubUser } from "./GetGitHubUser";
+import { GitHubUserList } from "./GithubUserList";
 
 
 function App() {
 
-    const handleCounterChange = (counter) => {
-        console.log('Counter is now :', counter);
-    };
+    const handleGitHubUserChange = (username) => {
+        return(
+            <div>{username.login}</div>
+        )
+    }
     return (<>
         <Hello/>
         <Login/>
-        <GetGitHubUser username="paolamelch"/>
-        <ClickCounter onCounterChange={handleCounterChange}/>
+        <GitHubUserList/>
     </>)
 }
 export default App
