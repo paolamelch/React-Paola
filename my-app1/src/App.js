@@ -6,6 +6,7 @@ import {ToDoList} from "./ToDoList";
 import { CounterDisplay } from "./CounterDisplay";
 import { GitHubUserList } from "./GithubUserList";
 import { ClickCounter } from "./ClickCounter";
+import { GithubUser } from "./GithubUser";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     return (<>
         <Hello/>
         <Login/>
+        <GithubUser username="paolamelch"/>
     </>)
 }
 export default App
