@@ -1,47 +1,35 @@
-import { useState } from "react"
+import {  UseHandleLogin } from "./UseHandleLogin";
 
 
-export function Login(){
-    const [data,setData] = useState({
-        username:'',
-        password:'',
-        remember:false
-    })
+export function Login() {
 
-    function handleInputChange(event){
-        const {name,value,type,checked} = event.target
-        setData((data)=>{
-            return{
-                ...data,
-                [name] : type === 'checkbox' ? checked : value
-            }
-        })
-    }
+    const {data,onChange,onReset} = UseHandleLogin({username: '', password: '', remember: false})
 
-    function handleResetButton(){
-        setData((data) =>{
-            return{
-                ...data,
-                username : '',
-                password : '',
-                remember : false
-            }
-        })
-    }
-
-    console.log(data);
     const isDisabled = !data.username || !data.password;
-    return(
-    <div>
+    return (
         <div>
-            <input type="text" name="username" value={data.username} onChange={handleInputChange}/>
-            <input type="password" name="password" value={data.password} onChange={handleInputChange}/>
-            <input type="checkbox" name="remember" checked={data.remember} onChange={handleInputChange}/>
-            <input type="button" name="login" value="login" disabled={isDisabled}/>
+            <div>
+                <input type="text" name="username"
+                    value={
+                        data.username
+                    }
+                    onChange={onChange}/>
+                <input type="password" name="password"
+                    value={
+                        data.password
+                    }
+                    onChange={onChange}/>
+                <input type="checkbox" name="remember"
+                    checked={
+                        data.remember
+                    }
+                    onChange={onChange}/>
+                <input type="button" name="login" value="login"
+                    disabled={isDisabled}/>
+            </div>
+            <div>
+                <button onClick={onReset}>Reset</button>
+            </div>
         </div>
-        <div>
-            <button onClick={handleResetButton}>Reset</button>
-        </div>
-    </div>
     )
 }

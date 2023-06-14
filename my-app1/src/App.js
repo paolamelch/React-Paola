@@ -15,10 +15,11 @@ function App() {
             <div>{username.login}</div>
         )
     }
+
+
     return (<>
         <Hello/>
-        <ClickCounter/>
-        <GitHubUserList/>
+        <Login/>
     </>)
 }
 export default App
