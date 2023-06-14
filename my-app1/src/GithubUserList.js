@@ -1,27 +1,30 @@
-import React from "react";
-import { useState } from "react";
-import { GetGitHubUser } from "./GetGitHubUser";
+import { useEffect, useState } from "react";
+import { GithubUser } from "./GithubUser";
 
-export function GitHubUserList(){
+export function GithubUserList(){
+    const [usernames, setUsernames] = useState([]);
+    const [inputValue, setInputValue] = useState('');
 
-    const [username,setUsername] = useState([])
-
-    function handleAddUser(newUsername){
-        fetch(`https://api.github.com/users/${newUsername}`)
-        .then((res) => res.json())
-        .then((data)=> setUsername([...username,data.login])
-        )
-    }
-
-    return(
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+      };
+    
+      const handleAddUser = () => {
+        setUsernames([...usernames, inputValue]);
+        setInputValue('');
+      };
+    
+      return (
         <div>
-            <ul>
-               <GetGitHubUser AddUsername={handleAddUser}/>
-               {username.map((user)=>(
-                <li key={user}>{user}</li>
-               ))} 
-            </ul>
-            
+          <div>
+            <input type="text" value={inputValue} onChange={handleInputChange} />
+            <button onClick={handleAddUser}>Aggiungi Utente</button>
+          </div>
+          <div>
+            {usernames.map((username) => (
+              <GithubUser username={username} />
+            ))}
+          </div>
         </div>
-    )
-}
+      );
+    };
