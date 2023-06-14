@@ -5,6 +5,7 @@ import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
 import { CounterDisplay } from "./CounterDisplay";
 import { GitHubUserList } from "./GithubUserList";
+import { ClickCounter } from "./ClickCounter";
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     }
     return (<>
         <Hello/>
-        <Login/>
+        <ClickCounter/>
         <GitHubUserList/>
     </>)
 }
