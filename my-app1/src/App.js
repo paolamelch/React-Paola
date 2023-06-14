@@ -4,7 +4,7 @@ import {Login} from "./Login";
 import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
 import { CounterDisplay } from "./CounterDisplay";
-import { GitHubUserList } from "./GithubUserList";
+import { GithubUserList } from "./GithubUserList";
 
 
 function App() {
@@ -16,8 +16,7 @@ function App() {
     }
     return (<>
         <Hello/>
-        <Login/>
-        <GitHubUserList/>
+        <GithubUserList/>
     </>)
 }
 export default App
