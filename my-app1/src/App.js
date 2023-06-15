@@ -35,7 +35,7 @@ export function App(props) {
                 <Route path="/counter"
                     element={<ClickCounter/>}/>
                 <Route path="/users" element={<GithubUserList/>}>
-                    <Route index element={<p>Per favore scegli un username</p>}/>
+                    <Route index element={<p></p>}/>
                     <Route path=":username" element={<ShowGithubUser/>}/>
                 </Route>
                 <Route path="*" element={
