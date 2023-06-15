@@ -1,4 +1,5 @@
 import React, { createContext } from "react";
+import { useContext } from "react";
 
 export const LanguageContext = createContext("en");
 
@@ -11,17 +12,9 @@ const strings = {
     }
 }
 
-export class DisplayContext extends React.Component{
-    render(){
-        return(
-            <LanguageContext.Consumer>
-             {(language) =>{
-                return(
-                    <h1>{strings[language].selected}</h1>
-                )
-             }}   
-            </LanguageContext.Consumer>
-            
-        )
-    }
+export function DisplayContext(){
+    const language = useContext(LanguageContext)
+    return(
+        <h1>{strings[language].selected}</h1>   
+    )
 }
