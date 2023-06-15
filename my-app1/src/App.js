@@ -25,14 +25,8 @@ function App(props) {
         setLanguage(event.target.value)
     }
     return (<>
-    <select onChange={handleChangeSelect}>
-        <option value="en">English</option>
-        <option value="it">Italiano</option>
-    </select>
-    <LanguageContext.Provider value={language}>
         <Hello/>
-        <DisplayContext/>
-    </LanguageContext.Provider>
+        <ClickCounter/>
 
     </>)
 }
