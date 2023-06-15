@@ -10,8 +10,9 @@ import { GithubUser } from "./GithubUser";
 import { CarDetails } from "./CarDetails";
 import { DisplayContext, LanguageContext } from "./DisplayContext";
 import { FilteredList } from "./FilteredList";
-import { Routes } from "react-router-dom";
+import { Link, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
+import { ShowGithubUser } from "./ShowGithubUser";
 
 
 export function App(props) {
@@ -19,7 +20,9 @@ export function App(props) {
     
     return (<>
     <Routes>
+        <Route path="/" element={<Link to="users/paolamelch">Vai al nome</Link>}/>
         <Route path="/counter" element={<ClickCounter/>}/>
+        <Route path="users/:username" element={<ShowGithubUser/>}/>
     </Routes>
         
     </>)
