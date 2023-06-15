@@ -13,6 +13,7 @@ import {FilteredList} from "./FilteredList";
 import {Link, Routes} from "react-router-dom";
 import {Route} from "react-router-dom";
 import {ShowGithubUser} from "./ShowGithubUser";
+import { Welcome } from "./Welcome";
 
 
 export function App(props) {
@@ -30,10 +31,16 @@ export function App(props) {
             </div>
             <hr/>
             <Routes>
+                <Route path="/" element={<Welcome/>}/>
                 <Route path="/counter"
                     element={<ClickCounter/>}/>
                 <Route path="users/:username"
                     element={<ShowGithubUser/>}/>
+                <Route path="*" element={
+                <div><Link to="/">Go Home</Link>
+                    <p>Not found</p>
+                </div>
+                }/>
             </Routes>
 
         </>
