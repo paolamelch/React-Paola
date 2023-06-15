@@ -10,29 +10,31 @@ import { GithubUser } from "./GithubUser";
 import { CarDetails } from "./CarDetails";
 import { DisplayContext, LanguageContext } from "./DisplayContext";
 import { FilteredList } from "./FilteredList";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 
-function App(props) {
+export function App(props) {
 
-    // const handleGitHubUserChange = (username) => {
-    //     return(
-    //         <div>{username.login}</div>
-    //     )
-    // }
-    const [list, setList] = useState([
-        { id: 1, name: 'Alice', age: 15 },
-        { id: 2, name: 'Paola', age: 26 },
-        { id: 3, name: 'Carlo', age: 18 },
-        { id: 4, name: 'Paolo', age: 30 }
-      ]);
-
+    
     return (<>
-        <Hello/>
-        <ClickCounter/>
-        <FilteredList list={list}/>
+    <Routes>
+        <Route path="/counter" element={<ClickCounter/>}/>
+    </Routes>
+        
     </>)
 }
-export default App
+// const handleGitHubUserChange = (username) => {
+//     return(
+//         <div>{username.login}</div>
+//     )
+// }
+// const [list, setList] = useState([
+//     { id: 1, name: 'Alice', age: 15 },
+//     { id: 2, name: 'Paola', age: 26 },
+//     { id: 3, name: 'Carlo', age: 18 },
+//     { id: 4, name: 'Paolo', age: 30 }
+//   ]);
 
 
 
