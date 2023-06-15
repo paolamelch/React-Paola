@@ -7,9 +7,10 @@ import { CounterDisplay } from "./CounterDisplay";
 import { GitHubUserList } from "./GithubUserList";
 import { ClickCounter } from "./ClickCounter";
 import { GithubUser } from "./GithubUser";
+import { CarDetails } from "./CarDetails";
 
 
-function App() {
+function App(props) {
 
     const handleGitHubUserChange = (username) => {
         return(
@@ -20,8 +21,7 @@ function App() {
 
     return (<>
         <Hello/>
-        <Login/>
-        <GithubUser username="paolamelch"/>
+        <CarDetails initialData={props}/>
     </>)
 }
 export default App
