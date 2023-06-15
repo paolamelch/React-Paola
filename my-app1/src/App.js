@@ -9,6 +9,7 @@ import { ClickCounter } from "./ClickCounter";
 import { GithubUser } from "./GithubUser";
 import { CarDetails } from "./CarDetails";
 import { DisplayContext, LanguageContext } from "./DisplayContext";
+import { FilteredList } from "./FilteredList";
 
 
 function App(props) {
@@ -18,16 +19,17 @@ function App(props) {
     //         <div>{username.login}</div>
     //     )
     // }
+    const [list, setList] = useState([
+        { id: 1, name: 'Alice', age: 15 },
+        { id: 2, name: 'Paola', age: 26 },
+        { id: 3, name: 'Carlo', age: 18 },
+        { id: 4, name: 'Paolo', age: 30 }
+      ]);
 
-    const [language,setLanguage] = useState('en')
-
-    function handleChangeSelect(event){
-        setLanguage(event.target.value)
-    }
     return (<>
         <Hello/>
         <ClickCounter/>
-
+        <FilteredList list={list}/>
     </>)
 }
 export default App
