@@ -4,7 +4,7 @@ import {Login} from "./Login";
 import {UncontrolledLogin} from "./UncontrolledLogin";
 import {ToDoList} from "./ToDoList";
 import {CounterDisplay} from "./CounterDisplay";
-import {GitHubUserList} from "./GithubUserList";
+import {GithubUserList} from "./GithubUserList";
 import {ClickCounter} from "./ClickCounter";
 import {GithubUser} from "./GithubUser";
 import {CarDetails} from "./CarDetails";
@@ -27,15 +27,17 @@ export function App(props) {
                 <Link to="/counter">Counter</Link>
                 |
                 <Link
-                    to="users/paolamelch">Vai al nome</Link>
+                    to="/users">Vai alla lista degli user</Link>
             </div>
             <hr/>
             <Routes>
                 <Route path="/" element={<Welcome/>}/>
                 <Route path="/counter"
                     element={<ClickCounter/>}/>
-                <Route path="users/:username"
-                    element={<ShowGithubUser/>}/>
+                <Route path="/users" element={<GithubUserList/>}>
+                    <Route index element={<p>Per favore scegli un username</p>}/>
+                    <Route path=":username" element={<ShowGithubUser/>}/>
+                </Route>
                 <Route path="*" element={
                 <div><Link to="/">Go Home</Link>
                     <p>Not found</p>
