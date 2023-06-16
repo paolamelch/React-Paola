@@ -19,18 +19,25 @@ export function GithubUserList() {
     };
 
     return (
-        <div> {/* <div>
-            <input type="text" value={inputValue} onChange={handleInputChange} />
-            <button onClick={handleAddUser}>Aggiungi Utente</button>
-          </div> */}
+        <div>
+            <div>
+                <input type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}/>
+                <button onClick={handleAddUser}>Aggiungi Utente</button>
+            </div>
             <div>
                 <ul>
-                    <li>
-                        <Link to="/users/paolamelch">Paola</Link>
-                    </li>
-                    <li>
-                        <Link to="/users/gianmarcotoso">Gian Marco</Link>
-                    </li>
+                   {
+                        usernames.map((user, i) => (
+                            <li key={i}>
+                                <Link to={
+                                    `/users/${user}`
+                                }>
+                                    {user}</Link>
+                            </li>
+                        ))
+                    }
                 </ul>
                 <hr/>
 
