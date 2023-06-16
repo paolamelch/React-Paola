@@ -8,6 +8,7 @@ export function useGithubUser(username){
   function fetchGitHubUser(){
       mutate()
   }
+  //la consegna dell'esercizio 52 l'avevo già inserita negli esercizi precedenti
 
   return{data,error,loading : !data && !error ,onFetchUser: fetchGitHubUser}
   
